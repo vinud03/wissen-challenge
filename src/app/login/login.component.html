@@ -1,0 +1,37 @@
+<div class="outterContainer">
+    <div class="login-Form-Container shadow p-3 mb-5 bg-white rounded">
+        <div class="contentToCenter">
+            <img src="../../assets/wissen.jpg" alt="Company logo">
+        </div>
+        <div class="mt-3 mb-3 contentToCenter"><strong>Hello there, Sign in to Continue</strong></div>
+        <div class="loginForm">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="emailId">Email address</label>
+                    <input type="email" formControlName="email" class="form-control" id="emailId" aria-describedby="emailHelp">
+                    <small class="form-text text-danger" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+                        Please enter email address.
+                    </small>
+
+                    <small class="form-text text-danger" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
+                        Please enter valid mail id.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" id="password">
+                </div>
+                <div class="form-group form-check mt-2">
+                    <input type="checkbox" formControlName="terms" class="form-check-input" id="terms&conditions">
+                    <label class="form-check-label" for="terms&conditions">By creating or logging into an account, you
+                        are agreeing with our <strong>Terms & Conditions</strong> and <strong>Privacy Policies.</strong>
+                    </label>
+                </div>
+                <div id="submitButton" class="contentToCenter mt-2">
+                    <button type="submit" [disabled]="!loginForm.valid"
+                        class="btn m-2 w-100 btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

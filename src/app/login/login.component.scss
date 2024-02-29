@@ -1,0 +1,20 @@
+.login-Form-Container { 
+    width: 500px;
+}
+
+.outterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.contentToCenter {
+    display: flex;
+    justify-content: start;
+}
+
+.btn-primary:disabled {
+    cursor: not-allowed;
+}
